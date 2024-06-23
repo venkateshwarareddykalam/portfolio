@@ -21,6 +21,7 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
+            flex-wrap: wrap;
         }
         nav a {
             color: #fff;
@@ -42,6 +43,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
             padding: 2rem;
             background: #222;
             border-radius: 15px;
@@ -49,6 +51,7 @@
         }
         .home .content {
             max-width: 600px;
+            flex: 1;
         }
         .home h1 {
             font-size: 3rem;
@@ -60,10 +63,12 @@
             line-height: 1.6;
         }
         .home img {
-            width: 300px;
+            width: 100%;
+            max-width: 300px;
             height: auto;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+            margin-top: 1rem;
         }
         .home .btn {
             display: inline-block;
@@ -83,6 +88,38 @@
             text-align: center;
             margin-bottom: 2rem;
         }
+
+        @media (max-width: 768px) {
+            .home {
+                flex-direction: column;
+                text-align: center;
+            }
+            .home .content, .home img {
+                max-width: 100%;
+            }
+            .home h1 {
+                font-size: 2rem;
+            }
+            nav a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .home h1 {
+                font-size: 1.5rem;
+            }
+            .home p {
+                font-size: 1rem;
+            }
+            .home .btn {
+                padding: 0.6rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -100,10 +137,10 @@
     <section id="home" class="home">
         <div class="content">
             <h1>Hello, It's Me<br>Venkat<br>And I'm a <span class="highlight">Frontend Developer</span></h1>
-            <p>I feel fun in AI and Web development </p>
+            <p>I feel fun in AI and Web Development</p>
             <a href="#" class="btn">Download CV</a>
         </div>
-        <img src="venkat.png" alt="K.Venkateshwara Reddy">
+        <img src="venkat.png" alt="Venkat">
     </section>
 
     <section id="contact">
